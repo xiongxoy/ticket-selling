@@ -2,5 +2,13 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="/Users/zx/Documents/Courses/SA/Project/CinemaManagementSystem/lib/jgoodies-forms-1.7.2/jgoodies-forms-1.7.2-javadoc.jar"/>
+	<classpathentry kind="lib" path="/Users/zx/Documents/Courses/SA/Project/CinemaManagementSystem/lib/jgoodies-forms-1.7.2/jgoodies-forms-1.7.2-sources.jar"/>
+	<classpathentry kind="lib" path="/Users/zx/Documents/Courses/SA/Project/CinemaManagementSystem/lib/jgoodies-forms-1.7.2/jgoodies-forms-1.7.2-tests.jar"/>
+	<classpathentry kind="lib" path="/Users/zx/Documents/Courses/SA/Project/CinemaManagementSystem/lib/jgoodies-forms-1.7.2/jgoodies-forms-1.7.2.jar"/>
+	<classpathentry kind="lib" path="/Users/zx/Documents/Courses/SA/Project/CinemaManagementSystem/lib/JMF-2.1.1e/lib/customizer.jar"/>
+	<classpathentry kind="lib" path="/Users/zx/Documents/Courses/SA/Project/CinemaManagementSystem/lib/JMF-2.1.1e/lib/jmf.jar"/>
+	<classpathentry kind="lib" path="/Users/zx/Documents/Courses/SA/Project/CinemaManagementSystem/lib/JMF-2.1.1e/lib/mediaplayer.jar"/>
+	<classpathentry kind="lib" path="/Users/zx/Documents/Courses/SA/Project/CinemaManagementSystem/lib/JMF-2.1.1e/lib/multiplayer.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -40,7 +40,8 @@ import javax.swing.JTextPane;
 import movie.util.DBOpration;
 import movie.util.EasySQLTable;
 
-import com.jgoodies.forms.factories.FormFactory;
+import com.jgoodies.forms.factories.Forms;
+import com.jgoodies.forms.factories.CC;
 import com.jgoodies.forms.layout.ColumnSpec;
 import com.jgoodies.forms.layout.FormLayout;
 import com.jgoodies.forms.layout.RowSpec;
@@ -102,13 +103,13 @@ public class myvido extends JFrame {
 				ColumnSpec.decode("24px"),
 				ColumnSpec.decode("180px"),},
 			new RowSpec[] {
-				FormFactory.UNRELATED_GAP_ROWSPEC,
+//				FormsFacoty.UNRELATED_GAP_ROWSPEC,
 				RowSpec.decode("53px"),
-				FormFactory.RELATED_GAP_ROWSPEC,
+//				FormFactory.RELATED_GAP_ROWSPEC,
 				RowSpec.decode("15px"),
-				FormFactory.NARROW_LINE_GAP_ROWSPEC,
+//				FormFactory.NARROW_LINE_GAP_ROWSPEC,
 				RowSpec.decode("386px:grow"),
-				FormFactory.UNRELATED_GAP_ROWSPEC,
+//				FormFactory.UNRELATED_GAP_ROWSPEC,
 				RowSpec.decode("31px"),
 				RowSpec.decode("134px:grow"),}));
 		
@@ -235,7 +236,7 @@ public class myvido extends JFrame {
 	}
 	
 	public class ImageViewer extends JPanel{
-//œ‘ æÕº∆¨
+		//œ‘ æÕº∆¨
 		//ImageIcon myicon = new ImageIcon("C:/Users/GY/Desktop/201112516423.jpg");
 		//Image image1 = myicon.getImage();
 		ImageIcon myicon;

@@ -1,8 +1,4 @@
-
-
 package movie.window;
-
-
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -82,7 +78,6 @@ public class show extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(new BorderLayout());
 		
-		
 		Vector<String> columnHeads = new Vector<String>();
 		columnHeads.add("E_id");
 		columnHeads.add("E_name");
@@ -93,51 +88,13 @@ public class show extends JFrame {
 		employee_Table = new EasySQLTable(panel,columnHeads);
 		employee_Table.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		
-		//panel.add(movieTable);
-		
-		
 		final String getemployee = "SELECT * FROM employee";
-		//ResultSet movieRs = employee_Table.getRs(getemployee, connection);
-		//VectorTemp = new Vector<Vector<String>>();
-		///employee_Temp = new Vector<String>();
 		employee_Table.getTable(getemployee, connection);
-		
-		
-		
-	/*  try {
-		  
-		  VectorTemp = (employee_Table.GetResultSet(movieRs));
-		
-		  for(Object t:  VectorTemp.toArray())
-		  {
-			  employee_Temp.add(((Vector<String>) t).get(1)); 
-		  }
-		
-	} catch (SQLException e1) {
-		// TODO Auto-generated catch block
-		e1.printStackTrace();
-	}*/
-	  
-	  /*  list = new JList();
-		list.setModel(new AbstractListModel() {
-			Object[] values =  employee_Temp.toArray();
-			public int getSize() {
-				return values.length;
-			}
-			public Object getElementAt(int index) {
-				return values[index];
-			}
-		});*/
-		
-		
-		
+
 		JLabel lblNewLabel = new JLabel("\u5458\u5DE5\u4FE1\u606F\u8868");
 		lblNewLabel.setBounds(339, 10, 85, 20);
 		lblNewLabel.setFont(new Font("ËÎÌו", Font.PLAIN, 17));
 		contentPane.add(lblNewLabel);
-		
-		
-		
 		
 		JButton button_1 = new JButton("\u5220\u9664\u8BB0\u5F55");
 		button_1.setBounds(198, 314, 93, 23);
@@ -159,7 +116,6 @@ public class show extends JFrame {
 					System.out.println(deleteRow);
 					employee_Table.getUpdate(deleteRow, connection);
 					employee_Table.getTable(getemployee, connection);
-				
 				}
 				else
 				{
@@ -181,10 +137,5 @@ public class show extends JFrame {
 		});
 		button.setBounds(423, 314, 93, 23);
 		contentPane.add(button);
-		
-		
-		
-		
-		
 	}
 }
