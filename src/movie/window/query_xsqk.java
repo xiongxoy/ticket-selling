@@ -127,7 +127,7 @@ public class query_xsqk extends JFrame {
 		Object[] class_choose = class_vector.toArray();
 		
 		
-		JLabel label = new JLabel("\u7535\u5F71\u540D");
+		JLabel label = new JLabel("电影名");
 		label.setBounds(27, 26, 54, 15);
 		contentPane.add(label);
 		
@@ -148,7 +148,7 @@ public class query_xsqk extends JFrame {
 		final EasySQLTable xsqkTable = new EasySQLTable(panel,columnHeads);
 		//panel.add(xsqkTable, BorderLayout.CENTER);
 		
-		JButton button = new JButton("\u67E5\u770B\u7ED3\u679C");
+		JButton button = new JButton("查看结果");
 		button.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
@@ -197,7 +197,7 @@ public class query_xsqk extends JFrame {
 		button.setBounds(189, 304, 101, 25);
 		contentPane.add(button);
 		
-		JButton button_1 = new JButton("\u53D6\u6D88");
+		JButton button_1 = new JButton("取消");
 		button_1.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -209,7 +209,7 @@ public class query_xsqk extends JFrame {
 		button_1.setBounds(608, 304, 101, 25);
 		contentPane.add(button_1);
 		
-		JLabel lblNewLabel = new JLabel("\u9500\u552E\u60C5\u51B5");
+		JLabel lblNewLabel = new JLabel("销售情况");
 		lblNewLabel.setBounds(430, 26, 137, 15);
 		contentPane.add(lblNewLabel);
 		

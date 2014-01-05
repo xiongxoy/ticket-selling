@@ -91,12 +91,12 @@ public class show extends JFrame {
 		final String getemployee = "SELECT * FROM employee";
 		employee_Table.getTable(getemployee, connection);
 
-		JLabel lblNewLabel = new JLabel("\u5458\u5DE5\u4FE1\u606F\u8868");
+		JLabel lblNewLabel = new JLabel("员工信息表");
 		lblNewLabel.setBounds(339, 10, 85, 20);
 		lblNewLabel.setFont(new Font("宋体", Font.PLAIN, 17));
 		contentPane.add(lblNewLabel);
 		
-		JButton button_1 = new JButton("\u5220\u9664\u8BB0\u5F55");
+		JButton button_1 = new JButton("删除记录");
 		button_1.setBounds(198, 314, 93, 23);
 		button_1.addActionListener(new ActionListener() {
 			@Override
@@ -125,7 +125,7 @@ public class show extends JFrame {
 		});
 		contentPane.add(button_1);
 		
-		JButton button = new JButton("\u589E\u52A0\u5458\u5DE5");
+		JButton button = new JButton("增加员工");
 		button.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {

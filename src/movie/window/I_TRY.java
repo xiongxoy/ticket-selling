@@ -118,7 +118,7 @@ public class I_TRY extends JFrame implements MouseListener{
 		btnNewButton.setBounds(642, 24, 93, 23);
 		contentPane.add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("\u589E\u52A0\u573A\u6B21");
+		JButton btnNewButton_1 = new JButton("增加场次");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -142,7 +142,7 @@ public class I_TRY extends JFrame implements MouseListener{
 		btnNewButton_1.setBounds(196, 337, 93, 23);
 		contentPane.add(btnNewButton_1);
 		
-		JButton button = new JButton("\u5220\u9664\u573A\u6B21");
+		JButton button = new JButton("删除场次");
 		button.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
@@ -174,7 +174,7 @@ public class I_TRY extends JFrame implements MouseListener{
 		button.setBounds(377, 337, 93, 23);
 		contentPane.add(button);
 		
-		JButton button_1 = new JButton("\u67E5\u770B\u9500\u552E\u60C5\u51B5");
+		JButton button_1 = new JButton("查看销售情况");
 		button_1.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
@@ -187,7 +187,7 @@ public class I_TRY extends JFrame implements MouseListener{
 		button_1.setBounds(539, 337, 179, 23);
 		contentPane.add(button_1);
 		
-		JLabel label = new JLabel("\u8BF7\u9009\u62E9\u7535\u5F71");
+		JLabel label = new JLabel("请选择电影");
 		label.setFont(new Font("微软雅黑", Font.BOLD, 20));
 		label.setBounds(25, 12, 106, 35);
 		contentPane.add(label);
@@ -197,7 +197,7 @@ public class I_TRY extends JFrame implements MouseListener{
 		scrollPane.setBounds(12, 59, 130, 301);
 		contentPane.add(scrollPane);
 		
-		JLabel label_1 = new JLabel("\u7535\u5F71\u540D");
+		JLabel label_1 = new JLabel("电影名");
 		label_1.setVerticalAlignment(SwingConstants.BOTTOM);
 		scrollPane.setColumnHeaderView(label_1);
 		
@@ -265,7 +265,7 @@ public class I_TRY extends JFrame implements MouseListener{
 		
 		//movieTable.getTable(getmovie, connection);
 		
-		JLabel label_2 = new JLabel("\u53EF\u9009\u573A\u6B21\u5217\u8868");
+		JLabel label_2 = new JLabel("可选场次列表");
 		label_2.setBounds(417, 60, 84, 18);
 		contentPane.add(label_2);
 	}

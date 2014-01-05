@@ -76,7 +76,7 @@ public class add_em extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		//JLabel lblNewLabel = new JLabel("\u804C\u5DE5\u53F7\r\n");
+		//JLabel lblNewLabel = new JLabel("职工号\r\n");
 		//lblNewLabel.setBounds(41, 41, 54, 15);
 		//contentPane.add(lblNewLabel);
 		
@@ -85,23 +85,23 @@ public class add_em extends JFrame {
 		label.setBounds(97, 31, 120, 24);
 		contentPane.add(label);
 		
-		JLabel lblNewLabel_1 = new JLabel("\u59D3\u540D");
+		JLabel lblNewLabel_1 = new JLabel("姓名");
 		lblNewLabel_1.setBounds(41, 97, 54, 15);
 		contentPane.add(lblNewLabel_1);
 		
-		JLabel lblNewLabel_2 = new JLabel("\u6027\u522B");
+		JLabel lblNewLabel_2 = new JLabel("性别");
 		lblNewLabel_2.setBounds(41, 153, 54, 15);
 		contentPane.add(lblNewLabel_2);
 		
-		JLabel lblNewLabel_3 = new JLabel("\u51FA\u751F\u5E74\u6708");
+		JLabel lblNewLabel_3 = new JLabel("出生年月");
 		lblNewLabel_3.setBounds(41, 209, 54, 15);
 		contentPane.add(lblNewLabel_3);
 		
-		JLabel lblNewLabel_4 = new JLabel("\u804C\u8D23");
+		JLabel lblNewLabel_4 = new JLabel("职责");
 		lblNewLabel_4.setBounds(41, 265, 54, 15);
 		contentPane.add(lblNewLabel_4);
 		
-		JLabel lblNewLabel_5 = new JLabel("\u72B6\u6001");
+		JLabel lblNewLabel_5 = new JLabel("状态");
 		lblNewLabel_5.setBounds(41, 321, 54, 15);
 		contentPane.add(lblNewLabel_5);
 		
@@ -128,23 +128,23 @@ public class add_em extends JFrame {
 		
 		
 		final JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"\u7537", "\u5973"}));
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"男", "女"}));
 		comboBox.setBounds(178, 150, 79, 21);
 		contentPane.add(comboBox);
 		
 		final JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"\u5F00\u53D1", "\u7EF4\u62A4", "\u7ECF\u7406"}));
+		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"开发", "维护", "经理"}));
 		comboBox_1.setBounds(178, 264, 79, 21);
 		contentPane.add(comboBox_1);
 		
 		final JComboBox comboBox_2 = new JComboBox();
-		comboBox_2.setModel(new DefaultComboBoxModel(new String[] {"\u5728\u5C97", "\u9000\u4F11 ", "\u79BB\u804C", "\u75C5\u5047"}));
+		comboBox_2.setModel(new DefaultComboBoxModel(new String[] {"在岗", "退休 ", "离职", "病假"}));
 		comboBox_2.setBounds(178, 321, 79, 21);
 		contentPane.add(comboBox_2);
 		
 		
 		
-		JButton btnNewButton = new JButton("\u786E\u5B9A");
+		JButton btnNewButton = new JButton("确定");
 		btnNewButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -236,7 +236,7 @@ public class add_em extends JFrame {
 		
 			
 		
-		JButton btnNewButton_1 = new JButton("\u53D6\u6D88");
+		JButton btnNewButton_1 = new JButton("取消");
 		btnNewButton_1.addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {

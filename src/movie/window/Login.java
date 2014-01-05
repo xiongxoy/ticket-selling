@@ -95,7 +95,7 @@ public class Login extends JFrame {
 		exitButton.setBounds(267, 273, 73, 32);
 		contentPane.add(exitButton);
 		
-		JLabel titleLable =  new JLabel("\u5458\u5DE5\u767B\u9646");
+		JLabel titleLable =  new JLabel("员工登陆");
 		titleLable.setBounds(179, 34, 80, 28);
 		titleLable.setFont(new Font("微软雅黑",  0, 20));
 		contentPane.add(titleLable);
@@ -126,18 +126,18 @@ public class Login extends JFrame {
 		
 		contentPane.add(about_label);
 		
-		final JRadioButton radioButton = new JRadioButton("\u552E\u7968\u754C\u9762",true);
+		final JRadioButton radioButton = new JRadioButton("售票界面",true);
 		buttonGroup.add(radioButton);
 		radioButton.setBounds(52, 221, 77, 26);
 		
 		contentPane.add(radioButton);
 		
-		final JRadioButton radioButton_1 = new JRadioButton("\u7ECF\u7406\u754C\u9762");
+		final JRadioButton radioButton_1 = new JRadioButton("经理界面");
 		buttonGroup.add(radioButton_1);
 		radioButton_1.setBounds(177, 221, 77, 26);
 		contentPane.add(radioButton_1);
 		
-		final JRadioButton radioButton_2 = new JRadioButton("\u8D26\u6237\u7BA1\u7406\u754C\u9762");
+		final JRadioButton radioButton_2 = new JRadioButton("账户管理界面");
 		buttonGroup.add(radioButton_2);
 		radioButton_2.setBounds(300, 221, 123, 26);
 		contentPane.add(radioButton_2);

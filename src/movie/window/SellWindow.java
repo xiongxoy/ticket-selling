@@ -80,18 +80,18 @@ public class SellWindow extends JFrame {
 		
 
 		
-		setTitle("V5\u7535\u5F71\u552E\u7968\u7CFB\u7EDF-\u552E\u7968\u754C\u9762");
+		setTitle("V5电影售票系统-售票界面");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 785, 650);
 		
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 		
-		JMenu mnNewMenu = new JMenu("\u6587\u4EF6");
+		JMenu mnNewMenu = new JMenu("文件");
 		mnNewMenu.setIcon(new ImageIcon(SellWindow.class.getResource("/javax/swing/plaf/metal/icons/ocean/floppy.gif")));
 		menuBar.add(mnNewMenu);
 		
-		JMenuItem mntmNewMenuItem = new JMenuItem("\u6CE8\u9500");
+		JMenuItem mntmNewMenuItem = new JMenuItem("注销");
 		mntmNewMenuItem.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -103,7 +103,7 @@ public class SellWindow extends JFrame {
 		});
 		mnNewMenu.add(mntmNewMenuItem);
 		
-		JMenuItem menuItem = new JMenuItem("\u9000\u51FA");
+		JMenuItem menuItem = new JMenuItem("退出");
 		menuItem.addActionListener(new ActionListener() {
 			/**
 			 * 退出响应
@@ -115,11 +115,11 @@ public class SellWindow extends JFrame {
 		});
 		mnNewMenu.add(menuItem);
 		
-		JMenu mnNewMenu_1 = new JMenu("\u5E2E\u52A9");
+		JMenu mnNewMenu_1 = new JMenu("帮助");
 		mnNewMenu_1.setIcon(new ImageIcon(SellWindow.class.getResource("/javax/swing/plaf/metal/icons/Question.gif")));
 		menuBar.add(mnNewMenu_1);
 		
-		JMenuItem mntmNewMenuItem_1 = new JMenuItem("\u5173\u4E8E");
+		JMenuItem mntmNewMenuItem_1 = new JMenuItem("关于");
 		mntmNewMenuItem_1.addActionListener(new ActionListener() {
 			/**
 			 * 弹出about框
@@ -156,7 +156,7 @@ public class SellWindow extends JFrame {
 		contentPane.add(scrollPane);
 		
 		
-		JLabel lblNewLabel = new JLabel("\u7535\u5F71\u540D");
+		JLabel lblNewLabel = new JLabel("电影名");
 		lblNewLabel.setVerticalAlignment(SwingConstants.BOTTOM);
 		scrollPane.setColumnHeaderView(lblNewLabel);
 	
@@ -171,7 +171,7 @@ public class SellWindow extends JFrame {
 		
 
 		
-		JLabel label = new JLabel("\u8BF7\u9009\u62E9\u7535\u5F71");
+		JLabel label = new JLabel("请选择电影");
 		label.setFont(new Font("微软雅黑", Font.BOLD, 20));
 		label.setBounds(25, 24, 106, 35);
 		contentPane.add(label);
@@ -180,11 +180,11 @@ public class SellWindow extends JFrame {
 		separator.setBounds(75, 449, 1, 2);
 		contentPane.add(separator);
 		
-		JLabel label_1 = new JLabel("\u53EF\u9009\u573A\u6B21\u5217\u8868");
+		JLabel label_1 = new JLabel("可选场次列表");
 		label_1.setBounds(428, 72, 84, 18);
 		contentPane.add(label_1);
 		
-		JButton button = new JButton("\u8FDB\u5165\u8D2D\u7968\u754C\u9762");
+		JButton button = new JButton("进入购票界面");
 		button.addActionListener(new ActionListener() {
 	
 			/**
@@ -220,11 +220,11 @@ public class SellWindow extends JFrame {
 				return;
 			}
 		});
-		button.setToolTipText("\u8BF7\u4ECE\u573A\u6B21\u5217\u8868\u4E2D\u9009\u62E9\u6307\u5B9A\u7684\u573A\u6B21\u540E\uFF0C\u518D\u8FDB\u5165\u8D2D\u7968\u754C\u9762");
+		button.setToolTipText("请从场次列表中选择指定的场次后，再进入购票界面");
 		button.setBounds(188, 23, 112, 44);
 		contentPane.add(button);
 		
-		JButton button_1 = new JButton("\u8FD4\u56DE");
+		JButton button_1 = new JButton("返回");
 		button_1.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
@@ -233,7 +233,7 @@ public class SellWindow extends JFrame {
 				l.setVisible(true);
 			}
 		});
-		button_1.setToolTipText("\u6CE8\u9500\u5E76\u8FD4\u56DE\u767B\u5F55\u754C\u9762");
+		button_1.setToolTipText("注销并返回登录界面");
 		button_1.setBounds(642, 31, 84, 28);
 		contentPane.add(button_1);
 		

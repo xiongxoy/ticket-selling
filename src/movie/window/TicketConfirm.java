@@ -69,7 +69,7 @@ public class TicketConfirm extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnNewButton = new JButton("\u786E\u8BA4");
+		JButton btnNewButton = new JButton("确认");
 		btnNewButton.addActionListener(new ActionListener() {
 			/**
 			 * 处理确认购买，实现对数据库的操作
@@ -122,7 +122,7 @@ public class TicketConfirm extends JFrame {
 		btnNewButton.setBounds(69, 254, 98, 28);
 		contentPane.add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("\u53D6\u6D88");
+		JButton btnNewButton_1 = new JButton("取消");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -138,27 +138,27 @@ public class TicketConfirm extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
-		JLabel label = new JLabel("\u7535\u5F71\u540D:");
+		JLabel label = new JLabel("电影名:");
 		label.setBounds(23, 19, 49, 18);
 		panel.add(label);
 		
-		JLabel label_1 = new JLabel("\u653E\u6620\u5385:");
+		JLabel label_1 = new JLabel("放映厅:");
 		label_1.setBounds(23, 56, 49, 18);
 		panel.add(label_1);
 		
-		JLabel label_2 = new JLabel("\u65F6\u6BB5:");
+		JLabel label_2 = new JLabel("时段:");
 		label_2.setBounds(33, 93, 29, 18);
 		panel.add(label_2);
 		
-		JLabel label_3 = new JLabel("\u7C7B\u578B:");
+		JLabel label_3 = new JLabel("类型:");
 		label_3.setBounds(33, 130, 29, 18);
 		panel.add(label_3);
 		
-		JLabel label_4 = new JLabel("\u6570\u91CF:");
+		JLabel label_4 = new JLabel("数量:");
 		label_4.setBounds(184, 19, 37, 18);
 		panel.add(label_4);
 		
-		JLabel label_5 = new JLabel("\u603B\u4EF7:");
+		JLabel label_5 = new JLabel("总价:");
 		label_5.setBounds(184, 93, 37, 18);
 		panel.add(label_5);
 		
@@ -204,7 +204,7 @@ public class TicketConfirm extends JFrame {
 		txtTotal.setBounds(224, 91, 86, 22);
 		panel.add(txtTotal);
 		
-		JLabel label_6 = new JLabel("\u8D2D\u7968\u4FE1\u606F\u786E\u8BA4");
+		JLabel label_6 = new JLabel("购票信息确认");
 		label_6.setBounds(150, 28, 78, 18);
 		contentPane.add(label_6);
 		

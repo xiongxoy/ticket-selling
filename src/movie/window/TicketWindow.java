@@ -141,24 +141,24 @@ public class TicketWindow extends JFrame {
 		timeBox.setBounds(386, 122, 68, 25);
 		contentPane.add(timeBox);
 		
-		JLabel lblNewLabel = new JLabel("\u65F6\u6BB5");
+		JLabel lblNewLabel = new JLabel("时段");
 		lblNewLabel.setBounds(342, 125, 26, 18);
 		contentPane.add(lblNewLabel);
 		
 		typeBox = new JComboBox();
-		typeBox.setModel(new DefaultComboBoxModel(new String[] {"\u666E\u901A\u7968", "\u5B66\u751F\u7968"}));
+		typeBox.setModel(new DefaultComboBoxModel(new String[] {"普通票", "学生票"}));
 		typeBox.setBounds(386, 82, 108, 25);
 		contentPane.add(typeBox);
 		
-		JLabel label = new JLabel("\u7C7B\u578B");
+		JLabel label = new JLabel("类型");
 		label.setBounds(342, 85, 26, 18);
 		contentPane.add(label);
 		
-		JLabel label_1 = new JLabel("\u6570\u91CF");
+		JLabel label_1 = new JLabel("数量");
 		label_1.setBounds(342, 203, 26, 18);
 		contentPane.add(label_1);
 		
-		JLabel label_2 = new JLabel("\u5F20");
+		JLabel label_2 = new JLabel("张");
 		label_2.setBounds(461, 203, 13, 18);
 		contentPane.add(label_2);
 		
@@ -168,72 +168,72 @@ public class TicketWindow extends JFrame {
 		contentPane.add(panel_1);
 		panel_1.setLayout(null);
 		
-		JLabel label_5 = new JLabel("\u7535\u5F71\u540D:");
+		JLabel label_5 = new JLabel("电影名:");
 		label_5.setBounds(25, 12, 42, 18);
 		panel_1.add(label_5);
 		
-		JLabel label_6 = new JLabel("\u4E0A\u6620\u65F6\u95F4:");
+		JLabel label_6 = new JLabel("上映时间:");
 		label_6.setBounds(12, 72, 55, 18);
 		panel_1.add(label_6);
 		
-		JLabel label_7 = new JLabel("\u56FD\u5BB6/\u5730\u533A:");
+		JLabel label_7 = new JLabel("国家/地区:");
 		label_7.setBounds(9, 100, 58, 18);
 		panel_1.add(label_7);
 		
-		JLabel label_8 = new JLabel("\u8BED\u8A00:");
+		JLabel label_8 = new JLabel("语言:");
 		label_8.setBounds(38, 132, 29, 18);
 		panel_1.add(label_8);
 		
-		JLabel label_9 = new JLabel("\u5BFC\u6F14:");
+		JLabel label_9 = new JLabel("导演:");
 		label_9.setBounds(38, 42, 29, 18);
 		panel_1.add(label_9);
 		
-		JLabel label_10 = new JLabel("\u7968\u4EF7:");
+		JLabel label_10 = new JLabel("票价:");
 		label_10.setBounds(38, 162, 29, 18);
 		panel_1.add(label_10);
 		
 		textField = new JLabel();
 		textField.setHorizontalAlignment(SwingConstants.LEFT);
-		textField.setText("\u7535\u5F71\u540D");
+		textField.setText("电影名");
 		textField.setBorder(null);
 		textField.setBounds(79, 12, 189, 18);
 		panel_1.add(textField);
 		
 		textField_1 = new JLabel();
-		textField_1.setText("\u5BFC\u6F14");
+		textField_1.setText("导演");
 		textField_1.setBorder(null);
 		textField_1.setBounds(79, 42, 189, 18);
 		panel_1.add(textField_1);
 		
 		textField_2 = new JLabel();
-		textField_2.setText("\u65F6\u95F4");
+		textField_2.setText("时间");
 		textField_2.setBorder(null);
 		textField_2.setBounds(79, 72, 71, 18);
 		panel_1.add(textField_2);
 		
 		textField_3 = new JLabel();
-		textField_3.setText("\u56FD\u5BB6");
+		textField_3.setText("国家");
 		textField_3.setBorder(null);
 		textField_3.setBounds(79, 100, 168, 18);
 		panel_1.add(textField_3);
 		
 		textField_4 = new JLabel();
-		textField_4.setText("\u8BED\u8A00");
+		textField_4.setText("语言");
 		textField_4.setBorder(null);
 		textField_4.setBounds(79, 132, 168, 18);
 		panel_1.add(textField_4);
 		
 		textField_5 = new JLabel();
-		textField_5.setText("\u7968\u4EF7");
+		textField_5.setText("票价");
 		textField_5.setBorder(null);
 		textField_5.setBounds(79, 162, 55, 18);
 		panel_1.add(textField_5);
 		
-		JLabel label_3 = new JLabel("\u7535\u5F71\u57FA\u672C\u4FE1\u606F");
+		JLabel label_3 = new JLabel("电影基本信息");
 		label_3.setBounds(30, 37, 78, 18);
 		contentPane.add(label_3);
 		
-		JLabel label_4 = new JLabel("\u5EA7\u4F4D\u9884\u89C8");
+		JLabel label_4 = new JLabel("座位预览");
 		label_4.setBounds(22, 279, 52, 18);
 		contentPane.add(label_4);
 		
@@ -243,7 +243,7 @@ public class TicketWindow extends JFrame {
 		tick_nr.setBounds(386, 199, 68, 25);
 		contentPane.add(tick_nr);
 		
-		JButton buyButton = new JButton("\u786E\u8BA4\u8D2D\u4E70");
+		JButton buyButton = new JButton("确认购买");
 		buyButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -253,7 +253,7 @@ public class TicketWindow extends JFrame {
 		buyButton.setBounds(575, 80, 98, 28);
 		contentPane.add(buyButton);
 		
-		JButton cancelButton = new JButton("\u53D6\u6D88");
+		JButton cancelButton = new JButton("取消");
 		cancelButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -303,11 +303,11 @@ public class TicketWindow extends JFrame {
 		label_20.setBounds(588, 301, 14, 18);
 		contentPane.add(label_20);
 		
-		JLabel label_21 = new JLabel("\u5EA7\u4F4D\u53F7");
+		JLabel label_21 = new JLabel("座位号");
 		label_21.setBounds(363, 279, 39, 18);
 		contentPane.add(label_21);
 		
-		JLabel label_22 = new JLabel("\u6392\u53F7");
+		JLabel label_22 = new JLabel("排号");
 		label_22.setBounds(82, 468, 26, 18);
 		contentPane.add(label_22);
 		
@@ -351,7 +351,7 @@ public class TicketWindow extends JFrame {
 		label_32.setBounds(112, 601, 14, 18);
 		contentPane.add(label_32);
 		
-		JLabel label_33 = new JLabel("\u653E\u6620\u5385");
+		JLabel label_33 = new JLabel("放映厅");
 		label_33.setBounds(329, 166, 39, 11);
 		contentPane.add(label_33);
 		
@@ -361,7 +361,7 @@ public class TicketWindow extends JFrame {
 		txtXx.setBounds(386, 160, 68, 22);
 		contentPane.add(txtXx);
 		
-		JLabel label_34 = new JLabel("\u53F7");
+		JLabel label_34 = new JLabel("号");
 		label_34.setBounds(461, 164, 13, 18);
 		contentPane.add(label_34);
 		

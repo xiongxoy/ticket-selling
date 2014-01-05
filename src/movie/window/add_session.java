@@ -111,11 +111,11 @@ public class add_session extends JFrame {
 		contentPane.add(comboBox_place);
 		
 		
-		JLabel label = new JLabel("\u653E\u6620\u5385\u53F7");
+		JLabel label = new JLabel("放映厅号");
 		label.setBounds(94, 72, 54, 15);
 		contentPane.add(label);
 		
-		JLabel label_1 = new JLabel("\u7535\u5F71\u540D");
+		JLabel label_1 = new JLabel("电影名");
 		label_1.setBounds(94, 27, 54, 15);
 		contentPane.add(label_1);
 		
@@ -126,11 +126,11 @@ public class add_session extends JFrame {
 		textField.setText(movieName);
 		textField.setEditable(false);
 		
-		JLabel label_2 = new JLabel("\u65F6\u95F4\u6BB5");
+		JLabel label_2 = new JLabel("时间段");
 		label_2.setBounds(94, 117, 54, 15);
 		contentPane.add(label_2);
 		
-		JLabel label_3 = new JLabel("\u7968\u4EF7");
+		JLabel label_3 = new JLabel("票价");
 		label_3.setBounds(94, 162, 54, 15);
 		contentPane.add(label_3);
 		
@@ -150,15 +150,15 @@ public class add_session extends JFrame {
 		contentPane.add(spinner_clock);
 		
 		
-		JLabel label_4 = new JLabel("\u65F6");
+		JLabel label_4 = new JLabel("时");
 		label_4.setBounds(181, 117, 17, 15);
 		contentPane.add(label_4);
 		
-		JLabel label_5 = new JLabel("\u5206");
+		JLabel label_5 = new JLabel("分");
 		label_5.setBounds(273, 117, 17, 18);
 		contentPane.add(label_5);
 		
-		JButton button = new JButton("\u786E\u8BA4");
+		JButton button = new JButton("确认");
 		button.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
@@ -233,7 +233,7 @@ public class add_session extends JFrame {
 		button.setBounds(41, 206, 93, 23);
 		contentPane.add(button);
 		
-		JButton button_1 = new JButton("\u53D6\u6D88");
+		JButton button_1 = new JButton("取消");
 		button_1.addActionListener(new ActionListener() {
 			
 
