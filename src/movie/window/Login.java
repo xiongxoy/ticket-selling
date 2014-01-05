@@ -100,7 +100,7 @@ public class Login extends JFrame {
 		titleLable.setFont(new Font("微软雅黑",  0, 20));
 		contentPane.add(titleLable);
 		
-		about_label = new JLabel("关于Victory 5影院售票系统");
+		about_label = new JLabel("关于影院售票系统 v0.1");
 		about_label.setBounds(267, 312, 160, 32);
 		
 		about_label.addMouseListener(new MouseAdapter() {

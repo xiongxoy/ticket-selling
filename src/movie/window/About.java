@@ -46,7 +46,7 @@ public class About extends JFrame {
 		lblNewLabel.setBounds(126, 143, 55, 17);
 		contentPane.add(lblNewLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel("Victory 5\u5C0F\u7EC4\u4F5C\u54C1");
+		JLabel lblNewLabel_1 = new JLabel("影院售票系统 v0.1");
 		lblNewLabel_1.setFont(new Font("微软雅黑", Font.BOLD, 15));
 		lblNewLabel_1.setBounds(89, 69, 127, 20);
 		contentPane.add(lblNewLabel_1);
