@@ -207,7 +207,7 @@ public class Login extends JFrame {
 					
 					if(radioButton_1.isSelected())
 					{
-						I_TRY i = new I_TRY();
+						SessionManagement i = new SessionManagement();
 						i.setVisible(true);
 						self.dispose();
 					}

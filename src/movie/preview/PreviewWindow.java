@@ -46,7 +46,7 @@ import com.jgoodies.forms.layout.ColumnSpec;
 import com.jgoodies.forms.layout.FormLayout;
 import com.jgoodies.forms.layout.RowSpec;
 
-public class myvido extends JFrame {
+public class PreviewWindow extends JFrame {
 
 	private JPanel contentPane;
 	private Player player; // ²¥·ÅÆ÷¶ÔÏó
@@ -74,7 +74,7 @@ public class myvido extends JFrame {
 			@Override
 			public void run() {
 				try {
-					myvido frame = new myvido();
+					PreviewWindow frame = new PreviewWindow();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -85,7 +85,7 @@ public class myvido extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public myvido() {
+	public PreviewWindow() {
 		
 		connection = DBOpration.connectDB();
 		

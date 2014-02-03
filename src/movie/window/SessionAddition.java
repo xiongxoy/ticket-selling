@@ -28,20 +28,17 @@ import javax.swing.SpinnerNumberModel;
 
 import movie.util.DBOpration;
 
-
-
-
 /**
  * 增加场次主界面
  * @author 实验室
  *
  */
-public class add_session extends JFrame {  
+public class SessionAddition extends JFrame {  
 
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;
-	private add_session self;
+	private SessionAddition self;
     private String price;
     private String clock,minute;
     private String room;
@@ -56,7 +53,7 @@ public class add_session extends JFrame {
 			public void run() {
 				try {
 					JFrame no = new JFrame();
-					add_session frame = new add_session(no,"XXXX","1");
+					SessionAddition frame = new SessionAddition(no,"XXXX","1");
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -68,12 +65,10 @@ public class add_session extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public add_session( JFrame parent_temp,final String movieName,final String M_id) {
+	public SessionAddition(JFrame parent_temp,final String movieName,final String M_id) {
 		
 		System.out.println(nowTime());
 		connection = DBOpration.connectDB();
-		
-		
 		
 		parent = parent_temp;
 		parent.setEnabled(false);
@@ -173,7 +168,6 @@ public class add_session extends JFrame {
 				  if (!isPosNumber(price))
 					{
 						JOptionPane.showMessageDialog(contentPane, "价格没有正确输入!!!","......",JOptionPane.ERROR_MESSAGE) ;
-					
 					}
 				  else if (room == "")
 				  {
@@ -225,7 +219,7 @@ public class add_session extends JFrame {
 					view_query = view_query.concat(getM_id);
 					System.out.println(view_query);
 					
-					((I_TRY)parent).getMyTable().getTable(view_query, connection);
+					((SessionManagement)parent).getMyTable().getTable(view_query, connection);
 				self.dispose();
 				  }
 			}
@@ -235,12 +229,10 @@ public class add_session extends JFrame {
 		
 		JButton button_1 = new JButton("取消");
 		button_1.addActionListener(new ActionListener() {
-			
-
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				parent.setEnabled(true);
-			
+
 				self.dispose();
 			}
 		});
@@ -259,10 +251,8 @@ public class add_session extends JFrame {
 		}
 		
 		super.processWindowEvent(e);
-		
 	}
 	 
-	
 	//是否为整数
 	public static boolean isInteger(String value) {
 		try {
@@ -277,27 +267,29 @@ public class add_session extends JFrame {
 		}
 		}
 
-        //是否为浮点数
-		public static boolean isDouble(String value) {
+    //是否为浮点数
+	public static boolean isDouble(String value) {
 		try {
-		double temp = Double.parseDouble(value);
-		if (temp <= 0)
-		{
+			double temp = Double.parseDouble(value);
+			if (temp <= 0) {
 			return false;
 		}
-		if (value.contains("."))
-		return true;
-		return false;
+		if (value.contains(".")) {
+			return true;
+		}
+			return false;
 		} catch (NumberFormatException e) {
-		return false;
+			return false;
 		}
-		}
+	}
 
 
-		public static boolean isPosNumber(String value) {
-		return isInteger(value) || isDouble(value); }
-		//小于100的正整数转成2位STRING
-		public static String int2String(int num)
+	public static boolean isPosNumber(String value) {
+		return isInteger(value) || isDouble(value); 
+	}
+	
+	//小于100的正整数转成2位STRING
+	public static String int2String(int num)
 		{
 			if (num < 10)
 			{
@@ -308,12 +300,12 @@ public class add_session extends JFrame {
 				return String.valueOf(num);
 			}
 		}
-		//取得现在的系统时间，年月日时分秒
-		public static String nowTime() {
-			  Calendar c = Calendar.getInstance();
-			  c.setTimeInMillis(new Date().getTime());
-			  SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
-			  return dateFormat.format(c.getTime());
-			 }
+	//取得现在的系统时间，年月日时分秒
+	public static String nowTime() {
+		  Calendar c = Calendar.getInstance();
+		  c.setTimeInMillis(new Date().getTime());
+		  SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
+		  return dateFormat.format(c.getTime());
+	}
 		
 }

@@ -21,8 +21,6 @@ import java.util.Vector;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-
-
 public class SeatState extends JPanel {
 	
 	public static void main(String[] args) {
@@ -97,10 +95,7 @@ public class SeatState extends JPanel {
 			e.printStackTrace();
 		}
 
-
-		
 		System.out.println(result.size());
-		
 		String seatid = null;
 		
 		for(Vector<String> s : result)
@@ -108,8 +103,6 @@ public class SeatState extends JPanel {
 			seatid = s.get(0);
 			state[Integer.parseInt(seatid)] = true;
 		}
-		
-		
 		
 		for(int i=0; i<10; i++)
 			for(int j=0; j<10; j++)
@@ -119,8 +112,6 @@ public class SeatState extends JPanel {
 					add(new SeatPanel(true,i, j));
 		
 		System.out.println(getComponents().length + "!!!");
-		
-		
 	}
 	
 	/**
@@ -156,23 +147,23 @@ public class SeatState extends JPanel {
 }
 
 class SeatPanel extends JPanel  {
-	
+
 	private boolean available;
 	private boolean selected;
 	private JPanel self;
 	private Point2D point;
-	
+
 	public Point2D getPoint()
 	{
 		return point;
 	}
-	
-public boolean isSelected() {
+
+	public boolean isSelected() {
 		return selected;
 	}
 
 
-/**
+	/**
 	 * Create the panel.
 	 * 
 	 * THIS IS A HARD COMPONENT !!!
@@ -185,12 +176,11 @@ public boolean isSelected() {
 	 * 		clicked component will be selected, click again will release the component
 	 */
 	public SeatPanel(boolean s, int i, int j) {
-		
 		point = new Point(i,j);
 		available = s;
 		selected = false;	
 		self = this;
-	
+
 		this.setLayout(new BorderLayout());
 		addMouseListener(new MouseAdapter() {
 			@Override
@@ -200,37 +190,33 @@ public boolean isSelected() {
 			public void mouseClicked(MouseEvent e) {
 				// TODO Auto-generated method stub
 				super.mouseClicked(e);
-				if(available)
-				{
+				if(available) {
 					selected = !selected;
 					self.repaint(); //更新
 				}
-				
 				return;
 			}
 		});
-	
-		
 	}
-	
+
 	/**
 	 * 绘制图形的函数
 	 */
 	@Override
 	public void paint(Graphics g) {
 		// TODO Auto-generated method stub
-		
+
 		super.paint(g); //使用父类的方法，清空绘图区域
 		Graphics2D g2 = (Graphics2D) g;
-		
+
 		//设置颜色
 		if(available)
 			g2.setColor(Color.BLUE);
 		else
 			g2.setColor(Color.RED);
-		
+
 		g2.fill(( new Rectangle(5,5,20,20)) );
-		
+
 		if(selected)
 		{	
 			//绘制边框，数据基本是尝试出来的，也可以试着算一下
@@ -241,6 +227,6 @@ public boolean isSelected() {
 			g2.fill(new Rectangle(25,0,5,30));
 		}
 	}
-	
+
 };
 

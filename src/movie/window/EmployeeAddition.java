@@ -29,14 +29,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.WindowEvent;
 
 
-public class add_em extends JFrame {
+public class EmployeeAddition extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
 	private JFrame parent;
-	private add_em self;
+	private EmployeeAddition self;
 	private String E_name,sex,birthday,duty,state,E_id,tmp;
     private Connection connection;
 
@@ -49,7 +48,7 @@ public class add_em extends JFrame {
 			public void run() {
 				try {
 					JFrame yy = new JFrame();
-					add_em frame = new add_em(yy);
+					EmployeeAddition frame = new EmployeeAddition(yy);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -61,7 +60,7 @@ public class add_em extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public add_em(JFrame parent_temp) {
+	public EmployeeAddition(JFrame parent_temp) {
 		
 		connection = DBOpration.connectDB();
 		
@@ -75,10 +74,6 @@ public class add_em extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
-		//JLabel lblNewLabel = new JLabel("职工号\r\n");
-		//lblNewLabel.setBounds(41, 41, 54, 15);
-		//contentPane.add(lblNewLabel);
 		
 		JLabel label = new JLabel("增加员工信息");
 		label.setFont(new Font("宋体", Font.PLAIN, 20));
@@ -104,29 +99,12 @@ public class add_em extends JFrame {
 		JLabel lblNewLabel_5 = new JLabel("状态");
 		lblNewLabel_5.setBounds(41, 321, 54, 15);
 		contentPane.add(lblNewLabel_5);
-		
-		
-		
-		
-		//textField = new JTextField();
-
-		//textField.setText("\r\n");
-		//textField.setBounds(178, 36, 111, 21);
-		//contentPane.add(textField);
-		//textField.setColumns(10);
-		
-		
-		
-		
+	
 		textField_1 = new JTextField();
 		textField_1.setBounds(178, 94, 66, 21);
 		contentPane.add(textField_1);
 		textField_1.setColumns(10);
-		
-		
-		
-		
-		
+	
 		final JComboBox comboBox = new JComboBox();
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"男", "女"}));
 		comboBox.setBounds(178, 150, 79, 21);
@@ -141,8 +119,6 @@ public class add_em extends JFrame {
 		comboBox_2.setModel(new DefaultComboBoxModel(new String[] {"在岗", "退休 ", "离职", "病假"}));
 		comboBox_2.setBounds(178, 321, 79, 21);
 		contentPane.add(comboBox_2);
-		
-		
 		
 		JButton btnNewButton = new JButton("确定");
 		btnNewButton.addActionListener(new ActionListener() {
@@ -175,7 +151,7 @@ public class add_em extends JFrame {
 				}
 				tmp = (String) ((roomTemp.toArray())[0]);
 				
-				tmp = add_session.int2String(Integer.parseInt(tmp));
+				tmp = SessionAddition.int2String(Integer.parseInt(tmp));
 				System.out.println("kkk");
 				//System.out.println(E_name.length());
 				 if (E_name.length() == 0 )
@@ -198,9 +174,7 @@ public class add_em extends JFrame {
 						 String add_query = "insert into employee(E_id,E_name,sex,birthday,duty,state)  values(";
 						
 						 String getE_id = "";
-						 //getE_id = getE_id.concat("\"").concat(E_id).concat(birthday.substring(0, 6)).concat(tmp).concat("\"");
 						 getE_id = getE_id.concat("\"").concat(E_id).concat("\"");
-						 
 						 
 						 String getE_name = "";
 						 getE_name = getE_name.concat("\"").concat(E_name).concat("\"");
@@ -222,9 +196,7 @@ public class add_em extends JFrame {
 					  
 					System.out.println(add_query);
 					DBOpration.getUpdate(add_query, connection);
-					/*String view_query = "select movie.M_name as 电影名,S_id as 场次,S_date as 日期,O_id as 放映厅号  from session ,movie where movie.M_id = session.M_id and  movie.M_id = ";
-					view_query = view_query.concat(getM_id);
-					System.out.println(view_query);*/
+					
 					String getemployee = "SELECT * FROM employee";
 					((show)parent).getMyTable().getTable(getemployee, connection);	  
 					self.dispose();
@@ -247,20 +219,12 @@ public class add_em extends JFrame {
 		btnNewButton_1.setBounds(178, 398, 93, 23);
 		contentPane.add(btnNewButton_1);
 		
-		
-		
-		
-		
-		
 		textField_2 = new JTextField();
 		textField_2.setBounds(178, 206, 111, 21);
 		contentPane.add(textField_2);
 		textField_2.setColumns(10);
 	}
-	
-	
-	
-	
+
     public static boolean checkDate(String sourceDate){
         if(sourceDate==null){
             return false;

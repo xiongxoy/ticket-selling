@@ -21,6 +21,7 @@ import java.sql.Connection;
 
 public class TicketConfirm extends JFrame {
 
+	private static final long serialVersionUID = 4298324636797188091L;
 	private JPanel contentPane;
 	private JTextField txtName;
 	private JTextField txtRoom;
@@ -82,7 +83,7 @@ public class TicketConfirm extends JFrame {
 				String delete_sql = "Delete From seat where S_id = " + "\"" + S_id +"\"" + "and seatid = "; 
 				
 				
-				String R_data = add_session.nowTime().substring(0, 14);
+				String R_data = SessionAddition.nowTime().substring(0, 14);
 				String sellprice = Double.toString(par.getSinglePrice());
 				String R_id_no_seat = R_data.substring(0, 8) + par.getRoomNr() + S_id.substring(10, 13);
 				String R_id = null;
@@ -95,12 +96,12 @@ public class TicketConfirm extends JFrame {
 				{
 					DBOpration.getUpdate(delete_sql + 
 										 "\""  +
-										 add_session.int2String(((int)p.getX()) * 10 + ((int)p.getY())) +
+										 SessionAddition.int2String(((int)p.getX()) * 10 + ((int)p.getY())) +
 										 "\""
 										 , con);
 					
 					 R_id  = R_id_no_seat + 
-							 add_session.int2String(((int)p.getX()) * 10 + ((int)p.getY()));
+							 SessionAddition.int2String(((int)p.getX()) * 10 + ((int)p.getY()));
 						     
 					add_sql  = "insert into record values(" +
 					           "\"" + R_id + "\"," + 

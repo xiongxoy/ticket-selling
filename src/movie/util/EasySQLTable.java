@@ -60,7 +60,6 @@ public class EasySQLTable extends JPanel {
 
 		// 显示Form
 		this.setVisible(true);
-		
 	}
 	
 	
@@ -75,7 +74,6 @@ public class EasySQLTable extends JPanel {
 		Vector<String> columnHeads = new Vector<String>();
 		Vector<Vector<String>> rows = new Vector<Vector<String>>();
 		try {
-
 			// 获取字段的名称
 			ResultSetMetaData rsmd = rs.getMetaData();
 			for (int i = 1; i <= rsmd.getColumnCount(); ++i)
@@ -83,26 +81,22 @@ public class EasySQLTable extends JPanel {
 				System.out.println(rsmd.getSchemaName(i));
 				columnHeads.addElement(rsmd.getSchemaName(i));
 			}
-                 
 			// 获取记录集
 			do {
 				rows.addElement(getNextRow(rs, rsmd));
 			} while (rs.next());
-			
-       
+
 		} catch (SQLException sqlex) {
 			sqlex.printStackTrace();
-			
 		}
-		  return rows;
-			
+		return rows;
+
 	}
 
 
 	public ResultSet getRs(String query,Connection connection){
 		
 		try {
-
 			// 执行SQL语句
 			resultSet = (connection.createStatement()).executeQuery(query);
 			
@@ -135,9 +129,7 @@ public class EasySQLTable extends JPanel {
 		{
 			return (String) table.getModel().getValueAt(selectIndex, rowIndex);
 		}
-		
 		return null;
-			
 	}
 	
 	public void getUpdate(String query,Connection connection)
@@ -192,7 +184,6 @@ public class EasySQLTable extends JPanel {
 					ResultSetMetaData rsmd = rs.getMetaData();
 					for (int i = 1; i <= rsmd.getColumnCount(); ++i)
 						columnHeads.addElement(rsmd.getColumnLabel(i));
-
 					// 获取记录集
 					if (moreRecords)
 					{

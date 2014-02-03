@@ -130,7 +130,7 @@ public class show extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				add_em ae = new add_em(self);
+				EmployeeAddition ae = new EmployeeAddition(self);
 				ae.setVisible(true);
 			
 			}

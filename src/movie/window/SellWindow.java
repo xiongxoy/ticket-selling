@@ -37,6 +37,10 @@ import java.awt.event.ActionEvent;
 
 public class SellWindow extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private Connection connection;
 	private SellWindow self;
@@ -266,6 +270,10 @@ public class SellWindow extends JFrame {
 	  
 		
 		movieList.setModel(new AbstractListModel() {
+			/**
+			 * 
+			 */
+			private static final long serialVersionUID = 1L;
 			Object[] values =  movieTemp.toArray();
 			@Override
 			public int getSize() {

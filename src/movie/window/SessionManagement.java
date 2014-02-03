@@ -38,27 +38,17 @@ import movie.util.EasySQLTable;
  * @author 实验室
  *
  */
-public class I_TRY extends JFrame implements MouseListener{
-
-	/**
-	 * 
-	 */
+public class SessionManagement extends JFrame implements MouseListener{
+	
 	private static final long serialVersionUID = 1L;
-	/**
-	 * 
-	 */
-	
-	private JPanel contentPane;               // 存放电影场次表的面板
-	private Connection connection;           //和数据库的连接
-	private JList list;                      //电影名列表
-	private EasySQLTable movieTable;          //场次列表
-	private I_TRY self;                          //一个指向自己的指针
-	private Vector<Vector<String>> VectorTemp ;//临时保存从数据库取出的movie表的内容，有电影名和电影ID
-	private Vector<String> movieTemp ;         //和上面的一样，只是保存的只有电影名这一列
-	private String view_query;                //数据库取出电影名和电影ID所用到的数据库查询的语句
-	
-	
-	
+	private JPanel contentPane;               				//存放电影场次表的面板
+	private Connection connection;           				//和数据库的连接
+	private JList list;                      				//电影名列表
+	private EasySQLTable movieTable;          				//场次列表
+	private SessionManagement self;                         //一个指向自己的指针
+	private Vector<Vector<String>> VectorTemp ;				//临时保存从数据库取出的movie表的内容，有电影名和电影ID
+	private Vector<String> movieTemp ;         				//和上面的一样，只是保存的只有电影名这一列
+	private String view_query;                				//数据库取出电影名和电影ID所用到的数据库查询的语句
 	
 	/**
 	 * Launch the application.
@@ -68,7 +58,7 @@ public class I_TRY extends JFrame implements MouseListener{
 			@Override
 			public void run() {
 				try {
-					I_TRY frame = new I_TRY();
+					SessionManagement frame = new SessionManagement();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -88,9 +78,7 @@ public class I_TRY extends JFrame implements MouseListener{
 	/**
 	 * Create the frame.
 	 */
-	public I_TRY() {
-		
-		
+	public SessionManagement() {
 		self = this;
 		connection = DBOpration.connectDB();
 		
@@ -132,11 +120,9 @@ public class I_TRY extends JFrame implements MouseListener{
 					return;
 				}
 				String M_id = VectorTemp.get(list.getSelectedIndex()).get(0);
-				add_session as = new add_session(self,movieName,M_id);
+				SessionAddition as = new SessionAddition(self,movieName,M_id);
 				
 				as.setVisible(true);
-				
-				
 			}
 		});
 		btnNewButton_1.setBounds(196, 337, 93, 23);
@@ -178,10 +164,8 @@ public class I_TRY extends JFrame implements MouseListener{
 		button_1.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				query_xsqk Looking = new query_xsqk();
+				SalesWindow Looking = new SalesWindow();
 				Looking.setVisible(true);
-				
-				
 			}
 		});
 		button_1.setBounds(539, 337, 179, 23);
@@ -202,8 +186,6 @@ public class I_TRY extends JFrame implements MouseListener{
 		scrollPane.setColumnHeaderView(label_1);
 		
 		list = new JList();
-		
-	
 		list.setValueIsAdjusting(true);
 		list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		scrollPane.setViewportView(list);
@@ -224,8 +206,6 @@ public class I_TRY extends JFrame implements MouseListener{
 		movieTable = new EasySQLTable(panel,columnHeads);
 		movieTable.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		
-		//panel.add(movieTable);
-		
 		//取出电影名和电影ID，并存入VectorTemp和movieTemp
 		String getmovie = "SELECT M_id,M_name FROM movie";
 		ResultSet movieRs = movieTable.getRs(getmovie, connection);
@@ -244,29 +224,25 @@ public class I_TRY extends JFrame implements MouseListener{
 		// TODO Auto-generated catch block
 		e1.printStackTrace();
 	}
-	  
-		
-		list.setModel(new AbstractListModel() {
-			/**
-			 * 
-			 */
-			private static final long serialVersionUID = 1L;
-			Object[] values =  movieTemp.toArray();
-			@Override
-			public int getSize() {
-				return values.length;
-			}
-			@Override
-			public Object getElementAt(int index) {
-				return values[index];
-			}
-		});
-		
-		
-		//movieTable.getTable(getmovie, connection);
-		
-		JLabel label_2 = new JLabel("可选场次列表");
-		label_2.setBounds(417, 60, 84, 18);
+
+	  list.setModel(new AbstractListModel() {
+		  /**
+		   * 
+		   */
+		  private static final long serialVersionUID = 1L;
+		  Object[] values =  movieTemp.toArray();
+		  @Override
+		  public int getSize() {
+			  return values.length;
+		  }
+		  @Override
+		  public Object getElementAt(int index) {
+			  return values[index];
+		  }
+	  });
+
+	  JLabel label_2 = new JLabel("可选场次列表");
+	  label_2.setBounds(417, 60, 84, 18);
 		contentPane.add(label_2);
 	}
 
@@ -277,45 +253,35 @@ public class I_TRY extends JFrame implements MouseListener{
 		if(e.getSource() == list)
 		{
 			String name_click = (String) list.getSelectedValue();    //取出用户在电影列表中选中的电影名
-			
 			System.out.println(name_click);
 			
 			view_query = "select movie.M_name as 电影名,S_id as 场次,S_date as 日期,O_id as 放映厅号  from session ,movie where movie.M_id = session.M_id and  M_name = ";
-			//view_query.concat(name_click);
 			System.out.println(view_query);
 			view_query = view_query.concat("\"").concat(name_click).concat("\"");
 			
 			System.out.println(view_query);
-			
-			
 			movieTable.getTable(view_query, connection);  //显示提交请求并显示 场次表
-			
 		}
-		
 	}
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
 	}
 }
 

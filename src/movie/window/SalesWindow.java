@@ -1,35 +1,38 @@
 package movie.window;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JButton;
+import javax.swing.WindowConstants;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Vector;
-import javax.swing.WindowConstants;
 
 import movie.util.DBOpration;
 import movie.util.EasySQLTable;
+
 /**
  * 销售情况的整个框架类
  * @author 实验室
  *
  */
-public class query_xsqk extends JFrame {
+public class SalesWindow extends JFrame {
 
 	private JPanel contentPane;
 	private String movieName ;  //选中电影名
-	private String M_id;      // 选中电影ID
+	private String M_id;      	// 选中电影ID
 	private Connection connection;
-	private query_xsqk self;
+	private SalesWindow self;
 	
 
 	/**
@@ -40,7 +43,7 @@ public class query_xsqk extends JFrame {
 			@Override
 			public void run() {
 				try {
-					query_xsqk frame = new query_xsqk();
+					SalesWindow frame = new SalesWindow();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -52,11 +55,11 @@ public class query_xsqk extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public query_xsqk() {
+	public SalesWindow() {
 		
 		//初始化
-		 movieName = "" ;
-		 M_id = "";
+		movieName = "" ;
+		M_id = "";
 		self = this;
 		setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 800, 400);
